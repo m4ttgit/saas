@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudFlow - Business SaaS Solution</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      header {
+        background: #35424a;
+        color: #ffffff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #e8491d 3px solid;
+      }
+      header a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      header #branding {
+        float: left;
+      }
+      header #branding h1 {
+        margin: 0;
+      }
+      header nav {
+        float: right;
+        margin-top: 10px;
+      }
+      header .highlight,
+      header .current a {
+        color: #e8491d;
+        font-weight: bold;
+      }
+      header a:hover {
+        color: #cccccc;
+        font-weight: bold;
+      }
+      #hero {
+        min-height: 400px;
+        background: url("hero.jpg") no-repeat center center/cover;
+        text-align: center;
+        color: #ffffff;
+      }
+      #hero h1 {
+        margin-top: 100px;
+        font-size: 55px;
+        margin-bottom: 10px;
+      }
+      #hero p {
+        font-size: 20px;
+      }
+      #about {
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      #contact {
+        padding: 20px;
+        background: #35424a;
+        color: #ffffff;
+      }
+      footer {
+        padding: 20px;
+        background: #e8491d;
+        color: #ffffff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Cloud</span>Flow</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="container">
+        <h1>Streamline Your Business with CloudFlow</h1>
+        <p>The all-in-one SaaS solution for modern businesses</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          CloudFlow is a cutting-edge Business SaaS platform designed to help
+          companies of all sizes streamline their operations, boost
+          productivity, and drive growth. Our suite of tools covers everything
+          from project management to customer relationship management, all in
+          one intuitive interface.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 CloudFlow. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.querySelector("nav").addEventListener("click", function (e) {
+        if (e.target.tagName === "A") {
+          e.preventDefault();
+          const targetId = e.target.getAttribute("href");
+          document
+            .querySelector(targetId)
+            .scrollIntoView({ behavior: "smooth" });
+        }
+      });
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message. We will get back to you soon!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
